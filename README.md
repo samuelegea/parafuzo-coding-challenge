@@ -1,24 +1,9 @@
-# README
+# Parafuzo coding challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# How to run this project
 
-Things you may want to cover:
+Well, if you have `docker`, `docker compose`, and `makec` installed in your machine, you can simply run:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+make up
+```
