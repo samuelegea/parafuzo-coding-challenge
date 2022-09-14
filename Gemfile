@@ -13,9 +13,10 @@ gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
 end
-
-group :development do
-  # gem 'spring'
+group :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 5.0'
 end

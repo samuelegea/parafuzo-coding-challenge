@@ -18,9 +18,12 @@ class ParkingsController < ApplicationController
   end
 
   def pay
-    @parking.update!(paid_at: Time.now)
-
-    render json: @parking
+    if @parking.paid_at?
+      render json: { 'message': 'Already Paid' }, status: :unprocessable_entity
+    else
+      @parking.update!(paid_at: Time.now)
+      render json: @parking
+    end
   end
 
   def checkout
@@ -33,13 +36,12 @@ class ParkingsController < ApplicationController
     end
   end
 
-
   private
     def set_parking
       @parking = Parking.find(params[:id])
     end
 
     def parking_params
-      params.require(:parking).permit(:plate)
+      params.permit(:plate)
     end
 end
